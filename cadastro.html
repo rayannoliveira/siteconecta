@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>des</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aref+Ruqaa">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+
+<body style="padding-top:-10px;">
+    <div class="header-dark" style="width:auto;padding-right:0px;background-color:rgba(255,255,255,0.35);background-image:url(&quot;assets/img/Árvore%20alternativa%201.png&quot;);">
+        <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
+            <div class="container"><a class="navbar-brand" href="index.html" style="font-family:'Aref Ruqaa', serif;font-size:24px;color:rgb(74,112,89);">Conecta+Verde</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon" style="background-color:rgb(74,112,89);"></span></button>
+                <div
+                    class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#"></a></li>
+                    </ul>
+                    <form class="form-inline mr-auto" target="_self"><label></label></form><span class="navbar-text"><a href="login.html" class="login" style="color:rgb(74,112,89);">Log In</a></span><a class="btn btn-light action-button" role="button" href="#" style="background-color:rgb(74,112,89);">CADASTRAR</a></div>
+    </div>
+    </nav>
+    <div class="container-fluid" style="width:auto;background-color:rgba(255,255,255,0);">
+        <form  action="controler/cadastroController.php" method="post" class="d-inline-block" action="cadastro-bd.php" data-aos="fade-left" style="align-content:center;background-size:cover;background-color:rgba(255,255,255,0);height:537px;width:auto;padding-top:0px;margin-top:0px;padding-left:0px;"><label></label>
+            <input class="form-control" type="text" name="nome" placeholder="Nome Completo" style="margin-left:24px;color:rgb(0,0,0);width:329px;"><label style="color:rgba(0,0,0,0.9);margin-left:10px;"></label>
+            <input class="form-control" type="email"
+                name="email" placeholder="Email" style="width:330px;margin-left:24px;background-color:rgb(252,252,252);"><label style="margin-left:10px;color:rgb(8,8,8);"></label>
+                <input class="form-control" type="password" name="senha" placeholder="Senha"
+                style="width:330px;margin-left:24px;"><label style="margin-left:10px;color:rgb(0,0,0);"></label>
+                <input class="form-control" type="password" name="senha2" required="" placeholder="Confirmação de senha" style="width:330px;margin-left:24px;">
+            <label
+                style="color:rgb(6,6,6);margin-left:10px;"></label><label></label>
+                <select name="TipoPessoa"class="form-control" value="1" style="width:330px;margin-left:24px;">
+                <optgroup label="Tipo">
+                        <option value="fisica"> PessoaFísica</option>
+                        <option value="empresa">Empresa </option>
+                    </optgroup>
+                </select>
+                <label style="margin-left:10px;color:rgb(6,6,6);"></label>
+                <textarea
+                    class="form-control" name="texto" placeholder="Tesxo de descrição: qual o seu real intuito" style="width:330px;margin-left:24px;background-color:#ffffff;">
+                </textarea><label style="margin-left:10px;color:rgb(7,7,7);"></label>
+                <input class="form-control" type="url" name="link" placeholder="Link do site da empresa ou rede social para pessoa física" style="width:330px;margin-left:24px;">
+                    <label
+                        style="color:rgb(7,7,7);margin-left:10px;"></label>
+                        <select name="tipoContribuidor" class="form-control" style="margin-left:24px;width:330px;">
+                            <optgroup label="Tipo de categoria verde">
+                                <option value="contribuidor">Contribuidor Verde</option><option value="criador">Criador Verde</option>
+                            </optgroup>
+                        </select>
+                        <button
+                            class="btn btn-primary" type="submit" style="background-color:#4a7059;color:#fcf9f9;width:330px;margin-left:20px;padding:8px;padding-top:8px;margin-top:20px;border-color:#4a7059;">ENVIAR</button>
+        </form>
+    </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <script src="assets/js/script.min.js"></script>
+</body>
+
+</html>
