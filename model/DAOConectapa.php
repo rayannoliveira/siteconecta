@@ -1,7 +1,7 @@
 <?php
 
 require_once("model/Conectapa.php");
-require_once("model/Recebedor.php");
+
 class DAOConectapa{
 		private $conn;
 		private $stmt;
@@ -66,7 +66,30 @@ class DAOConectapa{
 			//Retorna uma lista de ConectaPA
 		}
 
+		public function listarRecebedor($idrecebedor){
+			$listaconectaPA = new ArrayObject(); 
+			
+			$this->sql= "Select idcanectaPa,idDoador_MateriaisF,idRecebedor_MateriaisF from canectapa, recebedor_materiais,recebedor
+			where
+			idRecebedor_MateriaisF = id_recebedor_materiais	AND
+			idRecebedorRF = idRecebedor				AND
+			idRecebedor ='{$idrecebedor}'";
+			$this->stmt=$this->conn->query($this->sql);
+			$lista=$this->stmt->fetchALL();
+
+			foreach ($lista as $linha) {
+		   		$conectapa = new Conectapa($linha['idDoador_MateriaisF'], $linha['idRecebedor_MateriaisF']); 
+
+				//$conectapa -> nome = $linha['idcanectaPa']; 
+				//$conectapa -> idDoadorMateriais = $linha['idDoador_MateriaisF']; 
+				//$conectapa -> idRecebedorMateriais = $linha['idRecebedor_MateriaisF'];
+			 
+			 	$listaconectaPA -> append($conectapa); 
 	
+			}
+		   	return $listaconectaPA;
+		   	
+	}
 
 }
 

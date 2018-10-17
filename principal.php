@@ -64,9 +64,9 @@ $retorno= $objdao->buscarMateriais();
                 </ul>
         </div>
         </div>
-        <form method="post" action="controler/buscaController.php">
-    </nav>
-    <label class="d-flex justify-content-center align-content-center align-self-center mx-auto" style="font-size:25px;padding-top:80px;">Tipo de ação</label>
+<form method="post" action="controler/buscaController.php">
+            </nav>
+                    <label class="d-flex justify-content-center align-content-center align-self-center mx-auto" style="font-size:25px;padding-top:80px;">Tipo de ação</label>
     <div class="container d-flex float-none justify-content-center align-items-center align-content-center mx-auto">
         <select name="tipoacao" style="width:433px;padding-top:5px;height:47px;">
                          <option value="doar">Doar</option>

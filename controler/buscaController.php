@@ -36,21 +36,15 @@ class BuscarController{
 	public function incluirRecebedor(){
 
 		$id=$_SESSION['id'];
+
 		$obj= new Recebedormateriais($_POST['tipoMaterial'],$id, $_POST['tipoacao']);
 		$objdao= new DAORecebedorMateriais();
 		$retorno=$objdao->salvarR($obj);
-		echo $retorno;
+		$_SESSION['tipoMaterial']=$_POST['tipoMaterial'];
+		$_SESSION['tipoacao']=$_POST['tipoacao'];
+
+		header('location:../materialcadastrado.php');
 		
-	}
-	public function includeDoador(){
-				$idmaterias= $_SESSION['tipoMaterial'];
-				$tipoacao=$_SESSION['tipoacao'];
-				$idDoador=$_SESSION['id'];
-				$tipoacao;
-				$objdao= new DaoRecebedorMateriais;
-				$retorno= $objdao->buscarM($idmaterias,$tipoacao);
-				//header('location:../conectapa.php');				
- 
 	}
 
 }

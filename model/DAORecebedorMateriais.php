@@ -54,6 +54,32 @@ public function listaR($idrecebedormatch){
 
 	}
 
+	public function buscarMaterias($id){
+		$idRecebedor=$id;
+		$this->sql="select * from recebedor_materiais where idRecebedorRF='{$idRecebedor}'";
+		   	$this->stmt = $this->conn->query($this->sql);
+		   	$lista=$this->stmt->fetchALL();
+		   	
+		   	return $lista;
+
+
+	}
+
+	public function buscarMatch($idMateriais,$tipoAcao){
+		$id= $idMateriais;
+		$tipo=$tipoAcao;
+
+		$this->sql= "select id_doador_materias, id_recebedor_materiais FROM recebedor_materiais r, doador_materiais d 
+					WHERE idmateriaisRF = '{$id}' AND
+					r.tipo = '{$tipo}' AND 
+					idmateriaisRF = idmateriaisF 
+					AND r.tipo = d.tipo";
+		$this->stmt = $this->conn->query($this->sql);
+		$lista= $this->stmt->fetchALL();
+		return $lista;
+
+	}
+
 
 
 

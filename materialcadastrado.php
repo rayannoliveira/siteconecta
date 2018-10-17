@@ -9,25 +9,21 @@ if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == tru
 
   }
   $id=$_SESSION['id'];
+  $tipo=$_SESSION['tipo'];
 
  require_once("model/DAODoadorMateriais.php");
+ require_once("model/DAORecebedorMateriais.php");
  
 //Buscar os materiais cadastrados na tabela Doador_Materiais
+if ($tipo=="doador") {
+    $objdao= new DAODoadorMateriais;
+    $retorno= $objdao->buscarMaterias($id);
+}
+else{
+    $objdaor = new DAORecebedorMateriais;
+    $retornoR= $objdaor->buscarMaterias($id);   
+}
 
-$objdao= new DAODoadorMateriais;
-$retorno= $objdao->buscarMaterias($id);
-
-$id=1;
-$tipo="doar";
-$objdao1= new DAODoadorMateriais;
-$match= $objdao1->buscarMatch($id,$tipo);
- //intval($GET['pagina']);    
-//puxar produtos do banco 
-$objdao2= new DAODoadorMateriais;
-
-//$retorno2= $objdao2->buscarMateriaisLimit($id,$pagina,$itens_por_pasta);
-
-//var_dump($retorno2);
 ?>
 
 
@@ -76,36 +72,15 @@ $objdao2= new DAODoadorMateriais;
     </nav>
     <h1 class="text-center" style="font-family:Bitter, serif;color:rgb(74,112,89);">Materiais Cadastrados</h1>
     <div class="container">
-        <form action="depois.php" method="GET">
-                <div class="table-responsive">
-                     <table id="materiasCadastrados" class="table">
-                        <thead>
-                            <tr>
-                                <th>Material</th>
-                                <th>Ação</th>
-                            </tr>    
-                        </thead>
-                <tbody id="tabela" name="tipo">
-                    <?php  foreach ($retorno as $lista) {?>
-                        <tr>
-                            <td id="id">  
-                                <?php echo $lista['idmateriaisF'];?>
-                            </td>
-                            <td id="acao">  
-                                <?php echo $lista['tipo'];?>
-                            </td>
-                        </tr>
-                     <?php } ?>     
-                </tbody>
-            </table>
-        </div>
-        <div class="container d-flex flex-row justify-content-center align-content-center">
-            <button id="darmatch"class="btn btn-primary"  value="match" type="button" style="background-color: rgb(74,112,89);width: 126px;border-color: #fcfdfe;">Dar match</button>
-            <label style="width: 62px;"></label>
-                <button id="apagar"class="btn btn-primary" value="apagar" type="button" style="background-color: rgb(255,34,34);width: 125px;border-color: #fbfcfc;">Apagar</button>
-         </div>
+        <?php
+        if ($tipo=="doador") {
+            include("tabelaMaterialD.php");
+        }
+        else{
+            include("tabelaMaterialR.php");
+         }   
+        ?>
         
-    </form>
     </div>
 
     <script src="assets/js/jquery.min.js"></script>

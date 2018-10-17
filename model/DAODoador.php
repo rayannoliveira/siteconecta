@@ -72,6 +72,15 @@ class DAODoador{
 
 
 		   	}
+		   	public function listarDoador($id){
+		   		$this->sql="select * from doador where idDoador='{$id}'";
+		   		$this->stmt=$this->conn->query($this->sql);
+		   		$linha=$this->stmt->fetch();
+		  
+		   		$doador= new Doador($linha['nome_doador'],$linha['email_doador'],$linha['senha_doador'],$linha['tipo_doador'],$linha['texto_doador'],$linha['link_doador'],$linha['categoria_doador']); 
+		   		return $doador;
+
+		   	}
 
 		   	
 

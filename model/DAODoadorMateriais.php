@@ -18,7 +18,7 @@ class DAODoadorMateriais{
 		$this->sql="insert into doador_materiais(idDoadorF, idmateriaisF,tipo) values(:idDoadorF,:idMateriaisF,:tipoDM)";
 		$this->stmt = $this->conn->prepare($this->sql);
 
-		$idDoadorF= $objdoadorM->getIdDoador();
+		$idDoadorF= $objdoadorM->getIdDoadorf();
 		$idMateriaisF= $objdoadorM->getIdMateriaisf();
 		$tipoDM= $objdoadorM->getTipoDM();
 
@@ -78,6 +78,16 @@ class DAODoadorMateriais{
 
 	}
 
+public function listarDoadorMaterial($id){
+
+		$idDoador=$id;
+			$this->sql="select * from doador_materiais where id_doador_materias='{$idDoador}'";
+		   	$this->stmt = $this->conn->query($this->sql);
+		   	$linha=$this->stmt->fetch();
+		   	$doadorM = new DoadorMateriais($linha['idDoadorF'], $linha['idmateriaisF'],$linha['tipo']); 
+	  	return $doadorM;
+
+	}
 
 
 

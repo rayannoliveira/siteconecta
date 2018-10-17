@@ -43,7 +43,7 @@ require_once("../model/DAORecebedor.php");
 				$_SESSION['tipo']=$tipo;
 				$_SESSION['id']=$id;
 				
-				header("Location: ../principalrecebedor.php");
+				header("Location: ../principal.php");
 			}
 				
 			else{

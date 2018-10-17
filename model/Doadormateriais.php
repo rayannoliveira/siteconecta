@@ -22,7 +22,7 @@ public function setTipoDM($tipoDM){
 	$this->tipoDM=$tipoDM;
 }
 
-public function getIdDoador(){
+public function getIdDoadorf(){
 	return ($this->idDoadorF);
 }
 public function getIdMateriaisf(){
