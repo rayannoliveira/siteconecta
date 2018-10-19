@@ -1,7 +1,7 @@
 <?php
 
 require_once("model/Conectapa.php");
-
+//require_once("../model/Conectapa.php");
 class DAOConectapa{
 		private $conn;
 		private $stmt;

@@ -8,7 +8,9 @@
                             </tr>    
                         </thead>
                 <tbody id="tabela" name="tipo">
-                    <?php  foreach ($retorno as $lista) {?>
+                    <?php  foreach ($retorno as $lista) {
+
+                        ?>
                         <tr>
                             <td id="id">  
                                 <?php echo $lista['idmateriaisF'];?>

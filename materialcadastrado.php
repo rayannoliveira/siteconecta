@@ -13,11 +13,13 @@ if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == tru
 
  require_once("model/DAODoadorMateriais.php");
  require_once("model/DAORecebedorMateriais.php");
+ require_once("model/DAOMateriais.php");
  
 //Buscar os materiais cadastrados na tabela Doador_Materiais
 if ($tipo=="doador") {
     $objdao= new DAODoadorMateriais;
     $retorno= $objdao->buscarMaterias($id);
+
 }
 else{
     $objdaor = new DAORecebedorMateriais;

@@ -34,6 +34,12 @@ class DAOMateriais {
 		  
 
 	}
+	public function buscarNome($idmateriais){
+		$this->sql="select nome_materiais from materiais where idmateriais='{$idmateriais}' ";
+		   	$this->stmt = $this->conn->query($this->sql);
+		   	$linha=$this->stmt->fetchALL();
+		   	return $lista;
+	}
 
 
 }

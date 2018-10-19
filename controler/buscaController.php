@@ -6,6 +6,8 @@ require_once("../model/DAODoadorMateriais.php");
 require_once("../model/DAORecebedorMateriais.php");
 
 
+
+
 class BuscarController{
 
 	public function __construct(){
@@ -40,6 +42,7 @@ class BuscarController{
 		$obj= new Recebedormateriais($_POST['tipoMaterial'],$id, $_POST['tipoacao']);
 		$objdao= new DAORecebedorMateriais();
 		$retorno=$objdao->salvarR($obj);
+		var_dump($retorno);
 		$_SESSION['tipoMaterial']=$_POST['tipoMaterial'];
 		$_SESSION['tipoacao']=$_POST['tipoacao'];
 
